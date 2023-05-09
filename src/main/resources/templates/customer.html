@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Please enter your name and pick the Sectors you are currently involved in.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<p>Please enter your name and pick the Sectors you are currently involved in.</p>
+<form action="#" th:action="@{/customer}" th:object="${customerDto}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <table>
+        <tr>
+            <td>Name :</td>
+            <td><input type="text" th:field="*{name}"/></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:errorclass="error">Name Error</td>
+        </tr>
+
+        <tr>
+            <td>Sectors:</td>
+            <td><select th:field="*{sectors}" multiple size="5">
+                <option th:each="sector: ${sectorsList}"
+                        th:value="${sector.id}" th:text="${sector.name}">
+            </select>
+            </td>
+            <td th:if="${#fields.hasErrors('sectors')}" th:errors="*{sectors}" th:errorclass="error">Sectors Error</td>
+        </tr>
+
+        <tr>
+            <td><input id="agree" type="checkbox" name="agree" th:checked="*{agree}"/></td>
+            <td>Agree to terms</td>
+            <td th:if="${#fields.hasErrors('agree')}" th:errors="*{agree}" th:errorclass="error">Agree Error</td>
+        </tr>
+    </table>
+
+    <p><input type="submit" value="Save"></p>
+</form>
+</body>
+</html>
