@@ -15,6 +15,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,6 +33,7 @@ public class Customer {
     private Integer id;
 
     @NotBlank()
+    @Size(max = 100)
     private String name;
 
     @ManyToMany(fetch = FetchType.LAZY)

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class CustomerDto implements Serializable {
     private Integer id;
 
     @NotEmpty(message = "User's name cannot be empty.")
+    @Size(max=100)
     private String name;
 
     @NotEmpty(message = "Sectors cannot be empty.")
