@@ -53,8 +53,8 @@ class UtilsTest {
         List<SectorRowDto> result = Utils.tranformToPlain(dtoList);
 
         assertThat(result).isNotEmpty().hasSize(7);
-        assertThat(result).extracting(SectorRowDto::getId).containsExactly(1, 11, 12, 13, 2, 21, 22);
-        assertThat(result).extracting(SectorRowDto::getName).containsExactly("1", "____11", "____12", "____13", "2", "____21", "____22");
+        assertThat(result).extracting(SectorRowDto::id).containsExactly(1, 11, 12, 13, 2, 21, 22);
+        assertThat(result).extracting(SectorRowDto::name).containsExactly("1", "____11", "____12", "____13", "2", "____21", "____22");
     }
 
 }
