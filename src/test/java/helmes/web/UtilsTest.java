@@ -17,7 +17,7 @@ import helmes.model.SectorDto;
 import helmes.model.SectorRowDto;
 
 @ExtendWith(MockitoExtension.class)
-public class UtilsTest {
+class UtilsTest {
 
     @Test
     void shouldReturnEmptyListFormEmptySource() {

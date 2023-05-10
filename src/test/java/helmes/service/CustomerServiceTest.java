@@ -27,7 +27,7 @@ import helmes.persistence.repository.CustomerRepository;
 import helmes.transformer.CustomerMapper;
 
 @ExtendWith(MockitoExtension.class)
-public class CustomerServiceTest {
+class CustomerServiceTest {
 
     @InjectMocks
     private CustomerService customerService;

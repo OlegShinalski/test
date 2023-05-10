@@ -17,7 +17,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @ExtendWith(MockitoExtension.class)
-public class HierarchyCollectorTest {
+class HierarchyCollectorTest {
 
     @Data
     @AllArgsConstructor

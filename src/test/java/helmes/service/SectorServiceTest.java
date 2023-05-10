@@ -21,7 +21,7 @@ import helmes.persistence.repository.SectorRepository;
 import helmes.transformer.SectorMapper;
 
 @ExtendWith(MockitoExtension.class)
-public class SectorServiceTest {
+class SectorServiceTest {
 
     @InjectMocks
     private SectorService sectorService;
